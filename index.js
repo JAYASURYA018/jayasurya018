@@ -19,58 +19,58 @@
 
 
 
-// class Account {
-//     constructor(name,accountno,balance ) {
-//         this.name = name;
-//         this.accountno= accountno;
-//         this.balance= balance;
+class Account {
+    constructor(name,accountno,balance ) {
+        this.name = name;
+        this.accountno= accountno;
+        this.balance= balance;
 
-//     }
-//     getBalance() {
-//         return  `The balance is : ₹${this.balance}`;
+    }
+    getBalance() {
+        return  `The balance is : ₹${this.balance}`;
 
-//     }
+    }
 
     
-//    withdraw (amount){
-//        if (this.balance >= amount){
-//            this.balance = this.balance - amount;
-//            return this.getBalance();
-//        }else{
-//            return `Insufficient balance .${this.getBalance()}`
+   withdraw (amount){
+       if (this.balance >= amount){
+           this.balance = this.balance - amount;
+           return this.getBalance();
+       }else{
+           return `Insufficient balance .${this.getBalance()}`
        
-//        }
-//     }
-//     deposit (amount){
-//         if
-//             (this.balance = this.balance + amount);
-//             return this.getBalance();
-//         }
+       }
+    }
+    deposit (amount){
+        if
+            (this.balance = this.balance + amount);
+            return this.getBalance();
+        }
     
 
-// }
-// const surya = new Account("surya",898,100000);
-// const praveen = new Account("praveen",535,200000);
-// const kalyan = new Account("kalyan",5455,300000);
+}
+const surya = new Account("surya",898,100000);
+const praveen = new Account("praveen",535,200000);
+const kalyan = new Account("kalyan",5455,300000);
 
 
-// console.log(surya); 
-// console.log(praveen);
-//  console.log(kalyan); 
-
- 
+console.log(surya); 
+console.log(praveen);
+ console.log(kalyan); 
 
  
-//  console.log(surya.getBalance()); 
-//  console.log(praveen.getBalance());
-//  console.log(kalyan.getBalance()); 
+
+ 
+ console.log(surya.getBalance()); 
+ console.log(praveen.getBalance());
+ console.log(kalyan.getBalance()); 
 
 
-//  console.log(surya.withdraw(30000));
-//  console.log(praveen.withdraw(70000));
+ console.log(surya.withdraw(30000));
+ console.log(praveen.withdraw(70000));
 
-//  console.log(surya.deposit(150000));
-//  console.log(surya.getBalance());
+ console.log(surya.deposit(150000));
+ console.log(surya.getBalance());
 
 
 
