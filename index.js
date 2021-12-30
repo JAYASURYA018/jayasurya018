@@ -1,49 +1,89 @@
-const scores = [
-    {
-      marks: 32,
-      name: "Yvette Merritt"
-    },
-    {
-      marks: 57,
-      name: "Lillian Ellis"
-    },
-    {
-      marks: 22,
-      name: "Mccall Carter"
-    },
-    {
-      marks: 21,
-      name: "Pate Collier"
-    },
-    {
-      marks: 91,
-      name: "Debra Beard"
-    },
-    {
-      marks: 75,
-      name: "Nettie Hancock"
-    },
-    {
-      marks: 20,
-      name: "Hatfield Hodge"
-    }
-  ];
+//  class Car {
+//      constructor(name,wheels,doors,engine){
+//         this.name = name;
+//         this.wheels = wheels;
+//         this.doors = doors;
+//         this.engine = engine;
 
-// console.log(scores.map((score) => score.name),scores); 
+//     }
+// }
 
-// const result = scores.filter((score) => score.marks >40);
-// console.log(result);
+// const venue = new Car ("venue",4,4,"v3");
+// const bmwx6 = new Car ("bmw x6",4,4,"v6");
+// const toyatolandcruiser = new Car ("toyato landcruiser",4,4,"v3");
 
-// average of marks
-function getavg(scores){
-  
-  const total = scores.reduce((sum,cur) => sum + cur ,0);
-  return total / scores.length;
-}
-const average = getavg(scores);
-console.log(average);
-// 2.topper of the class
-const Topper = scores.filter((score) => score.marks > 90);
- console.log(Topper);
- const TopperName = Topper.map((score) => score.name);
- console.log(TopperName);
+
+// console.log(venue);
+// console.log(toyatolandcruiser);
+// console.log(bmwx6);
+
+
+
+// class Account {
+//     constructor(name,accountno,balance ) {
+//         this.name = name;
+//         this.accountno= accountno;
+//         this.balance= balance;
+
+//     }
+//     getBalance() {
+//         return  `The balance is : ₹${this.balance}`;
+
+//     }
+
+    
+//    withdraw (amount){
+//        if (this.balance >= amount){
+//            this.balance = this.balance - amount;
+//            return this.getBalance();
+//        }else{
+//            return `Insufficient balance .${this.getBalance()}`
+       
+//        }
+//     }
+//     deposit (amount){
+//         if
+//             (this.balance = this.balance + amount);
+//             return this.getBalance();
+//         }
+    
+
+// }
+// const surya = new Account("surya",898,100000);
+// const praveen = new Account("praveen",535,200000);
+// const kalyan = new Account("kalyan",5455,300000);
+
+
+// console.log(surya); 
+// console.log(praveen);
+//  console.log(kalyan); 
+
+ 
+
+ 
+//  console.log(surya.getBalance()); 
+//  console.log(praveen.getBalance());
+//  console.log(kalyan.getBalance()); 
+
+
+//  console.log(surya.withdraw(30000));
+//  console.log(praveen.withdraw(70000));
+
+//  console.log(surya.deposit(150000));
+//  console.log(surya.getBalance());
+
+
+
+
+
+ const getCountries = () => {
+     console.log("gettingg...");
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET","https://restcountries.com/v3.1/all");
+  xhr.send();
+  xhr.responseType = "json";
+  xhr.onload = () => {
+      const countries = xhr.response;
+      console.log("full data",countries);
+  };
+ };
