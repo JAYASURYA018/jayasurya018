@@ -1,0 +1,64 @@
+// GET ALL THE COUNTRIES FROM ASIA CONTINENT /REGION USING FILTER FUNCTION//
+
+var request = new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+   var data= JSON.parse(request.response);
+   var cont = data.filter((ele)=>ele.region=="Asia").map((ele)=> ele.name);
+    
+  console.log(cont);
+}
+
+//GET ALL THE COUNTRIES WITH A POPULATION OF LESS THAN 2 LAKHS USING FILTER FUNCTION//
+
+
+var request = new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+   var data= JSON.parse(request.response);
+   //console.log(data);
+   var cont = data.filter((ele)=>ele.population < 200000).map((ele)=>ele.name);
+    
+  console.log(cont);
+}
+//PRINT THE TOTAL POPULATION OF COUNTRIES USING REDUCE FUNCTION//
+
+var request = new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+   var data= JSON.parse(request.response);
+
+  var pop = data.reduce((acc,ele)=>acc+ele.population,0);
+  console.log(pop);
+}
+
+//PRINT THE FOLLOWING DETAILS NAME, CAPITAL, FLAG USING FOREACH FUNCTION//
+
+var request = new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+   var data= JSON.parse(request.response);
+   data.forEach((element)=>{console.log(`${element.name}${element.capital}${element.flag}`)});
+
+//PRINT THE COUNTRY WHICH USES US DOLLARS AS CURRENCY//
+
+var request = new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+   var data= JSON.parse(request.response);
+   let curren = data.filter((element)=>{
+      for (let i in element.currencies){
+         if (element.currencies[i].code==="USD"){
+            return true;
+         }
+
+      }
+   });
+   console.log(curren);
+
+
