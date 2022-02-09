@@ -1,0 +1,306 @@
+1.Do the below programs in anonymous function & IIFE
+
+//print odd numbers using IIFE//
+(function(arr){
+  for (let i=0;i<arr.length;i++)
+  {
+    if (arr[i]%2!==0)
+    console.log(arr[i]);
+    
+  }
+  
+  
+})([1,2,3,4,5]);
+  
+/By using Anonymous function/
+
+let a = function (){
+  
+  let arr1= [1,2,3,4,5]
+  for (i=0;i<arr1.length;i++)
+  {
+    if (arr1[i]%2!==0)
+   console.log(arr1[i]);
+  }
+  
+};
+a();
+//Convert all the strings to title caps in a string array//
+/by using IIFE method/
+(function(str){
+  str= str.toLowerCase().split(" ");
+  for(i=0;i<str.length;i++)
+  str[i]= str[i].charAt(0).toUpperCase()+str[i].slice(1);
+  console.log(str.join(" "));
+})("geeks for geeks");
+
+/by using anonymous function/
+let a= function(){
+  let str= "geeks for geeks";
+  str= str.toLowerCase().split(" ");
+  for(i=0;i<str.length;i++)
+  str[i]= str[i].charAt(0).toUpperCase()+str[i].slice(1);
+  console.log(str.join(" "));
+};
+a();
+//sum of all numbers in an array//
+/by using IIFE method/
+(function(arr){
+sum=0;
+for(i=0;i<arr.length;i++)
+{
+  sum+=arr[i];
+}
+console.log(sum);
+})([1,2,3,4,5]);
+
+/by using anonymous function/
+let a= function(){
+  let arr= ([1,2,3,4,5])
+sum=0;
+for(i=0;i<arr.length;i++)
+{
+  sum+=arr[i];
+}
+console.log(sum);
+};
+a();
+// get the prime number in an array//
+/by using IIFE method/
+(function(arr){
+    //let prime=true;
+  for(i=0;i<arr.length;i++)
+  
+  {
+    let prime=true;
+    for(j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j==0){
+   // console.log(arr[i])
+       prime=false;
+     break;
+    }
+  }
+  if(prime)
+  {
+    console.log(arr[i] );
+    
+  }
+
+  } 
+})([4,11,5,13,15]); 
+/by using anonymous function/
+let a=function(arr){
+    
+  for(i=0;i<arr.length;i++)
+  
+  {
+    let prime=true;
+    for(j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j==0){
+   // console.log(arr[i])
+       prime=false;
+     break;
+    }
+  }
+  if(prime)
+  {
+    console.log(arr[i] );
+    
+  }
+
+  } 
+};
+a([4,11,5,13,15]);
+
+
+//palindrome number in an array//
+/by using IIFE/
+(function(arr){
+  
+  for (i=0;i<arr.length;i++)
+  {
+    temp= arr[i];
+    
+    r=0;
+    sum=0;
+    while(temp>0)
+    {
+     r=temp%10;
+     sum= sum*10+r;
+     temp=parseInt(temp/10);
+    // ;
+    }
+   
+    if (arr[i]==sum)
+    console.log(sum);
+    
+  }
+  
+})([121,453,565,234]);
+
+/by using anonymous function/
+let a=function(arr){
+  
+  for (i=0;i<arr.length;i++)
+  {
+    temp= arr[i];
+    
+    r=0;
+    sum=0;
+    while(temp>0)
+    {
+     r=temp%10;
+     sum= sum*10+r;
+     temp=parseInt(temp/10);
+    // ;
+    }
+   
+    if (arr[i]==sum)
+    console.log(sum);
+    
+  }
+  
+};
+a([121,453,565,234]);
+//Remove duplicates from an array//
+/by using anonymous function/
+
+
+let a= function(arr1){
+  
+  for (i=0;i<arr1.length;i++)
+  {
+    dupl= false;
+    for (j=i+1;j<arr1.length;j++)
+    {
+      if (arr1[i]===arr1[j])
+      {
+        dupl= true;
+        
+      }
+    }
+    
+    if (!dupl)
+    {
+      arr2.push(arr1[i]);
+    }
+    
+  }
+  console.log(arr2);
+}
+
+let arr2= [];
+let arr = [1,6,1,2,3,5,1];
+a(arr);
+/by using IIFE/
+
+
+ (function(arr1){
+  let arr2=[];
+  for (i=0;i<arr1.length;i++)
+  {
+    dupl= false;
+    for (j=i+1;j<arr1.length;j++)
+    {
+      if (arr1[i]===arr1[j])
+      {
+        dupl= true;
+        
+      }
+    }
+    
+    if (!dupl)
+    {
+      arr2.push(arr1[i]);
+    }
+    
+  }
+  console.log(arr2);
+}([1,2,3,4,2,5,6,2,1]))
+
+3.Do the below programs in arrow functions
+ // print odd numbers using arrow function//
+let a =  ()=>{
+  
+  let arr1= [1,2,3,4,5]
+  for (i=0;i<arr1.length;i++)
+  {
+    if (arr1[i]%2!==0)
+   console.log(arr1[i]);
+  }
+  
+};
+a();
+//convert all the strings to title caps in string array using arrow function//
+let a= ()=>{
+  let str= "geeks for geeks";
+  str= str.toLowerCase().split(" ");
+  for(i=0;i<str.length;i++)
+  str[i]= str[i].charAt(0).toUpperCase()+str[i].slice(1);
+  console.log(str.join(" "));
+};
+a();
+//sum of all numbers in an array using arrow function//
+let a= ()=>{
+  let arr= ([1,2,3,4,5])
+sum=0;
+for(i=0;i<arr.length;i++)
+{
+  sum+=arr[i];
+}
+console.log(sum);
+};
+a();
+//return all the prime numbers in an array using arrow function//
+let a=(arr)=>{
+    
+  for(i=0;i<arr.length;i++)
+  
+  {
+    let prime=true;
+    for(j=2;j<arr[i];j++)
+    {
+      if(arr[i]%j==0){
+   // console.log(arr[i])
+       prime=false;
+     break;
+    }
+  }
+  if(prime)
+  {
+    console.log(arr[i] );
+    
+  }
+
+  } 
+};
+a([4,11,5,13,15]);
+// return all the palindrome in an array using arrow function//
+let a=(arr)=>{
+  
+  for (i=0;i<arr.length;i++)
+  {
+    temp= arr[i];
+    
+    r=0;
+    sum=0;
+    while(temp>0)
+    {
+     r=temp%10;
+     sum= sum*10+r;
+     temp=parseInt(temp/10);
+    // ;
+    }
+   
+    if (arr[i]==sum)
+    console.log(sum);
+    
+  }
+  
+};
+a([121,453,565,234]);
+
+
+
