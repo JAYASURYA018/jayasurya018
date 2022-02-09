@@ -1,0 +1,483 @@
+1.https://medium.com/@reach2arunprakash/guvi-zen-class-find-the-culprits-and-nail-them-9ee6c67c44fb
+
+1. Find the culprit
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script>
+    alert( “I’m JavaScript!’);=>alert("I'm JavaScript!"); // it is not properly closed ""
+    </script>
+    Whats the error in this ?
+    </body>
+    </html>
+
+2. Find the culprit and invoke the alert
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+     <script src=”script.js”></script> => <script src="scripts.js"></script> // change this
+    </body>
+    </html>
+scripts.js // here file name is scripts.js but src="script.js"
+    alert(“I’m invoked!”);
+
+3. Explain the below how it works
+explain.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    alert("I'm JavaScript!");
+    alert('Hello') // this line is not having semicolon
+    alert(`Wor
+    ld`)
+    alert(3 +
+    1
+    + 2); // this is multiple line code and its working
+
+in the html document in the script tag src file is linked "script.js"
+in the script.js
+The alert() method displays an alert box with a specified message and an OK button.
+it will displays all the alert box with ok button with one after another and even ; missing it will alert.
+
+4. Fix the below to alert Guvi geek
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let admin=9, fname=10.5; 
+    fname = "Guvi";
+    lname = "geek"
+    admin = fname+lname;
+    alert( admin ); // "Guvi geek"
+
+5. Fix the below to alert hello Guvi geek
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let fname=10.5; 
+    fname = "Guvi";
+    lname = "geek"
+    let name = fname+lname;
+    alert( 'hello ${name}' ); => alert(`hello ${name}`) 
+    //when you concat with string template $ it should not insert within ('') instead it should insert within (``).
+
+6. Fix the below to alert sum of two numbers
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let a = prompt("First number?");
+    let b = prompt("Second number?");
+    alert(a + b);
+
+always prompt will input string so we need to indicate Number type for input.
+and then basic syntax of prompt is 
+prompt("sometext","default value/ empty to take input") so answer is 
+
+    let a = Number(prompt("First number?",""));
+    let b = Number(prompt("Second number?",""));
+    alert(a + b);
+
+7. Fix the below to alert sum of two numbers
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let a = prompt("First number?");
+    let b = prompt("Second number?");
+    alert(a + b);
+
+answer: 
+    let a = Number(prompt("First number?",""));
+    let b = Number(prompt("Second number?",""));
+    alert(a + b);
+
+8. If you run the below scritpt you will get “Code is Blasted”
+Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    var a = "2" > "12"; // we change it to var a = "2"==="12"
+    //Don't touch below this
+    if (a) {
+    console.log("Code is Blasted") if true it will console
+    }
+    else
+    {
+    console.log("Diffused") if false it will console, now we can get "Diffused"
+    }
+
+9. How to get the success in console.
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let a = prompt("Enter a number?"); => let a = Number(prompt("Enter a number?",""))
+    //Don't modify any code below this
+    if (a) {
+    console.log( 'OMG it works for any number inc 0' );
+    }
+    else
+    {
+    console.log( "Success" );
+    }
+
+now in prompt box window if we did not give any value it will console "Success"
+suppose if we give value in prompt window it will console 'OMG it works for any number inc 0'
+
+10. How to get the correct score in console.
+fix.html
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <script src=”script.js”></script>
+    </body>
+    </html>
+script.js
+    let value = prompt('How many runs you scored in this ball'); => let value = prompt("How many runs you scored in this ball","");
+    if (value === 4) {
+        console.log("You hit a Four");
+    } else if (value === 6) {
+        console.log("You hit a Six");
+    } else {
+        console.log("I couldn't figure out"); => console.log("You hit a"+ value);
+    }
+
+2.https://medium.com/@reach2arunprakash/www-guvi-io-zen-4fa483a7d359
+
+1. Write a code to print the numbers in the array
+Output: 1234567891011
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var new_string = “”;
+    
+    for (var i = 1; i < 11; i--) {
+    new_string += numsArr[i] 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 0; i < 11; i++) {
+ new_string += numsArr[i] 
+}
+console.log(new_string);
+
+
+2. Write a code to print the numbers in the array
+Output: 1,2,3,4,5,6,7,8,9,10,11
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var new_string = “”;
+    
+    for (var i = 1; i < 11; i++) {
+    new_string += numsArr[i] + , 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = [];
+ 
+for (var i = 0; i < 11; i++) {
+ new_string.push(numsArr[i]) 
+}
+console.log(new_string);
+
+
+3. Write a code to print from last to first with spaces (Make sure there is no space after the last element 1)
+Output: 11 10 9 8 7 6 5 4 3 2 1
+    var new_string = “”;
+    
+    for (var i = 11; i > 0; i — ) {
+    new_string += numsArr[i] + “ “ 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 11; i >= 0; i--) {
+ new_string += numsArr[i] + " "
+}
+console.log(new_string);
+
+
+4. Write a code to replace the array value — If the number is even, replace it with ‘even’.
+Output:[ 1, “even”, 3, “even”, 5, “even”, 7, “even”, 9, “even”, … ]
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    for (var i = 0; i <=10; i++) {
+    if(numsArr[i] %2 == 0 )
+    {
+    numsArr[i] = odd
+    }
+    }
+    console.log(numsArr);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+if(numsArr[i] %2 === 0 )
+ {
+ numsArr[i]="even"
+ }
+}
+console.log(numsArr);
+
+
+5. Write a code to add all the numbers in the array
+Output: 66
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    for (var i = 0; i <=10; i++) {
+    var sum;
+    sum += numsArr[i]
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i<=10; i++) {
+ sum = sum + numsArr[i]
+}
+console.log(sum);
+
+
+6. Write a code to add the even numbers only
+Output: 30
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var sum=0;
+    for (var i = 0; i <10; i++) {
+    if(numsArr[i]%2==0);
+    sum += numsArr[i]
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (i = 0; i<numsArr.length; i++) {
+if(numsArr[i]%2===0){
+sum=sum+numsArr[i];
+}}
+console.log(sum);
+
+
+7. Write a code to add the even numbers and subract the odd numbers
+Output: 94
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var sum=100;
+    for (var i = 0; i <=10; i++) {
+    if(numsArr[i]%2!=0);
+    {
+    sum += numsArr[i]
+    }
+    else
+    {
+    sum -= numsArr[i]
+    }
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i]%2===0)
+ {
+ sum += numsArr[i];
+ }
+ else{
+ sum -= numsArr[i];
+ }
+}
+console.log(sum);
+
+
+3.https://medium.com/@reach2arunprakash/guvi-zen-simple-debugging-tasks-adcdc2d3249d
+
+1. Write a code to print the numbers in the array
+Output: 1234567891011
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var new_string = “”;
+    
+    for (var i = 1; i < 11; i--) {
+    new_string += numsArr[i] 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 0; i < 11; i++) {
+ new_string += numsArr[i] 
+}
+console.log(new_string);
+
+
+2. Write a code to print the numbers in the array
+Output: 1,2,3,4,5,6,7,8,9,10,11
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var new_string = “”;
+    
+    for (var i = 1; i < 11; i++) {
+    new_string += numsArr[i] + , 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = [];
+ 
+for (var i = 0; i < 11; i++) {
+ new_string.push(numsArr[i]) 
+}
+console.log(new_string);
+
+
+3. Write a code to print from last to first with spaces (Make sure there is no space after the last element 1)
+Output: 11 10 9 8 7 6 5 4 3 2 1
+    var new_string = “”;
+    
+    for (var i = 11; i > 0; i — ) {
+    new_string += numsArr[i] + “ “ 
+    }
+    console.log(new_string);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+ 
+for (var i = 11; i >= 0; i--) {
+ new_string += numsArr[i] + " "
+}
+console.log(new_string);
+
+
+4. Write a code to replace the array value — If the number is even, replace it with ‘even’.
+Output:[ 1, “even”, 3, “even”, 5, “even”, 7, “even”, 9, “even”, … ]
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    for (var i = 0; i <=10; i++) {
+    if(numsArr[i] %2 == 0 )
+    {
+    numsArr[i] = odd
+    }
+    }
+    console.log(numsArr);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+if(numsArr[i] %2 === 0 )
+ {
+ numsArr[i]="even"
+ }
+}
+console.log(numsArr);
+
+
+5. Write a code to add all the numbers in the array
+Output: 66
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    for (var i = 0; i <=10; i++) {
+    var sum;
+    sum += numsArr[i]
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i<=10; i++) {
+ sum = sum + numsArr[i]
+}
+console.log(sum);
+
+
+6. Write a code to add the even numbers only
+Output: 30
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var sum=0;
+    for (var i = 0; i <10; i++) {
+    if(numsArr[i]%2==0);
+    sum += numsArr[i]
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (i = 0; i<numsArr.length; i++) {
+if(numsArr[i]%2===0){
+sum=sum+numsArr[i];
+}}
+console.log(sum);
+
+
+7. Write a code to add the even numbers and subract the odd numbers
+Output: 94
+    var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    var sum=100;
+    for (var i = 0; i <=10; i++) {
+    if(numsArr[i]%2!=0);
+    {
+    sum += numsArr[i]
+    }
+    else
+    {
+    sum -= numsArr[i]
+    }
+    }
+    console.log(sum);
+
+Answer:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i]%2===0)
+ {
+ sum += numsArr[i];
+ }
+ else{
+ sum -= numsArr[i];
+ }
+}
+console.log(sum);
+
+
+8. 
+
