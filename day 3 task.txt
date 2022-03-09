@@ -1,0 +1,56 @@
+1.For the given JSON iterate over all for loops (for, for in, for of, forEach)
+
+
+
+// for loop with keys
+let key =Object.keys(obj);
+for(let i=0;i<key.length;i++)
+console.log(key[i])
+// for loop with values
+let value =Object.values(obj);
+for(let j=0;j<value.length;j++)
+console.log(value[j]);
+//iterate with the help of for Each loop
+key.forEach(keyval => {console.log(keyval,obj[keyval]);});
+// iterate using for in 
+for (let keyin in obj)
+console.log(keyin)
+ // iterate using for of
+ for (let keyof in obj)
+console.log(obj[keyof]);
+
+
+
+
+2. create a resume on json format
+
+
+
+ var Resume = [
+              { name : "jayasurya",
+                address : "nagari",
+                hobbies : "playing pubg" ,
+                email:"jayasuryavs1999@gmail.com",
+                languages known : "Tamil,English,Telugu"
+              },
+
+              {
+                  sslc : " sri saraswathi vignana mandir",
+                  HSC:"himaja junior college",
+                  qualification : "B.E"
+              },
+
+              {
+                  skill:"javascript ES6 "
+                  project : "Behavioural feature analysis on Anomalys Based System",
+              };  
+              
+
+
+3.Read about the difference between window, screen and document in javascript
+
+Window -window is the main JavaScript object root, aka the global object in a browser, and it can also be treated as the root of the document object model. You can access it as window.
+
+Screen- It is a small information object about physical screen dimensions.
+
+Document - It is the main object of the potentially visible (or better yet: rendered) document object model/DOM.
