@@ -1,0 +1,82 @@
+1.How to compare two JSON have the same properties without order?
+
+
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+ans-
+
+var per1 = 
+     {
+         name : "jayasurya",
+         age :20, 
+     },
+var per2 = {
+         age : 20,
+         name: "jayasurya",
+
+     }
+ console.log(JSON.stringify(per1) === JSON.stringify(per2));
+
+
+2.Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+3.Use the same rest countries and print all countries name, region, sub region and population
+
+
+// Set up our HTTP request
+// ajax way
+var xhr = new XMLHttpRequest();
+
+// Setup our listener to process completed requests
+xhr.onload = function () {
+  // Process our return data
+  if (xhr.status >= 200 && xhr.status < 300) {
+    // Runs when the request is successful
+    var t = JSON.parse(this.response);
+    //console.log(t);
+   for (key in t) {
+     //console.log(t[key])
+  for (key1 in t[key])
+  {
+    //console.log(key1)
+
+  if (key1 =='flag')
+  {
+
+    console.log(t[key][key1])
+  }
+  if (key1 == 'name')
+  {
+    console.log(t[key][key1])
+  }
+  if (key1 == 'region')
+  {
+    console.log(t[key][key1])
+  }
+  if (key1 == 'subregion')
+  {
+    console.log(t[key][key1])
+  }
+  if (key1 == 'population')
+  {
+    console.log(t[key][key1])
+  }
+}}
+
+  } else {
+    // Runs when it's not
+    
+    console.log(xhr.responseText); //get the error
+  }
+};
+
+// Create and send a GET request
+// The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+// The second argument is the endpoint URL
+xhr.open("GET", " https://restcountries.eu/rest/v2/all ");
+
+//we are sending a request
+xhr.send();
+
+// We have to stringify or parse this data
+JSON;
+
