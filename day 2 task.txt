@@ -1,0 +1,42 @@
+1.List 5 difference between Browser JS(console) v Nodejs
+                                 BROWSER JS 
+1.“window” is a predefined global object which has functions and attributes, that have to deal with window that has been drawn.
+2.“location” is another predefined object in browsers, that has all the information about the url we have loaded.
+3.“document”, which is also another predefined global variable in browsers, has the html which is rendered.
+4.Browsers may have an object named “global”, but it will be the exact one as “window”.
+5.Browsers don’t have “require” predefined. You may include it in your app for asynchronous file loading.
+                                 NODE JS
+
+1.Node doesn’t have a predefined “window” object cause it doesn’t have a window to draw anything.
+2.“location” object is related to a particular url; that means it is for page specific. So, node doesn’t require that.
+3.Ofcourse Node doesn’t have “document” object also, cause it never have to render anything in a page.
+4.Node has “global”, which is a predefined global object. It contains several functions that are not available in browsers, cause they are needed for server side works only.
+5.“require” object is predefined in Node which is used to include modules in the app.                          
+
+
+2.watch & summary 5 points - 
+1.PARSING HTML =
+-html is forgiving by nature
+-parsing isn't straight forward
+-can behalted
+2.speculative parsing 
+-will look ahead 
+-external images , scripts
+3.Reentrant 
+ - means the parsing process can be intruptted
+ 4.<script/> at the bottom
+ - parse uninterrupted
+ - faster to render
+ -trade off
+ 5.dom node to render object
+ - visual output 
+ -can layout and paint
+ 3.typeof(1) - number 
+typeof(1.1) - number
+typeof('1.1') - string
+typeof(true) - boolean
+typeof(null) - object
+typeof(undefined) - undefined
+typeof([]) - object
+typeof({}) - object
+typeof(NaN) - number
